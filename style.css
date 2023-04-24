@@ -1,0 +1,51 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Fira+Sans:ital,wght@1,400;1,500&family=Lobster&family=Niconne&family=Roboto&family=Roboto+Slab&family=Tilt+Neon&display=swap');
+body,button{
+    font-family: 'Tilt Neon', cursive;
+}
+:root{
+    --offcanvas-width:270px;
+    --topNavbarHeight:74px;
+}
+.sidebar-nav{
+    width: var(--offcanvas-width);
+}
+.sidebar-link{
+    display: flex;
+    align-items: center;
+}
+.sidebar-link .right-icon{
+    display: inline-flex;
+    /* transition: all ease 0.25s; */
+}
+.sidebar-link[aria-expanded="true"] .right-icon {
+    transform: rotate(180deg);
+}
+.sidebar-link1{
+    display: flex;
+    align-items: center;
+}
+.sidebar-link1 .right-icon{
+    display: inline-flex;
+    transition: all ease 0.25s;
+}
+.sidebar-link1[aria-expanded="true"] .right-icon {
+    transform: rotate(180deg);
+}
+@media (min-width:992px){
+    body{
+        overflow: auto !important;
+    }
+    .offcanvas-backdrop::before{
+        display: none;
+    }
+    .sidebar-nav{
+        transform: none;
+        visibility: visible !important;
+        top: var(--topNavbarHeight);
+        height: calc(100%- var(--topNavbarHeight));
+    }
+    main{
+        margin-left: var(--offcanvas-width);
+    }
+}
